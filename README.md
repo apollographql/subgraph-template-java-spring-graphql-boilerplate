@@ -1,6 +1,8 @@
-# Example Federated Spring GraphQL Subgraph
+# Java Spring Federated GraphQL Subgraph
 
-This is an example application template that can be used to create Federated GraphQL subgraph using [Spring GraphQL](https://spring.io/projects/spring-graphql).
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/Jomu73?referralCode=xsbY2R)
+
+This is an example application template that can be used to create Federated GraphQL subgraph using [Spring GraphQL](https://spring.io/projects/spring-graphql). You can use this template from [Rover](https://www.apollographql.com/docs/rover/commands/template/) with `rover template use --template subgraph-java-spring-graphql`.
 
 This example application implements following GraphQL schema:
 
