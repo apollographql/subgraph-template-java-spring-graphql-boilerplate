@@ -20,7 +20,7 @@
         <graphql-java.version>20.2</graphql-java.version>
         <jetbrains-annotations>24.1.0</jetbrains-annotations>
 
-        <maven-jar-plugin.version>3.4.0</maven-jar-plugin.version>
+        <maven-jar-plugin.version>3.4.1</maven-jar-plugin.version>
     </properties>
 
     <dependencies>
