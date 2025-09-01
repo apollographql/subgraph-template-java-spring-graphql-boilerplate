@@ -18,7 +18,7 @@
 
         <federation-graphql-java-support.version>5.4.0-test</federation-graphql-java-support.version>
         <graphql-java.version>20.2</graphql-java.version>
-        <jetbrains-annotations>26.0.2</jetbrains-annotations>
+        <jetbrains-annotations>26.0.2-1</jetbrains-annotations>
 
         <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
     </properties>
