@@ -16,7 +16,7 @@
     <properties>
         <java.version>17</java.version>
 
-        <federation-graphql-java-support.version>5.4.0-test</federation-graphql-java-support.version>
+        <federation-graphql-java-support.version>5.5.0</federation-graphql-java-support.version>
         <graphql-java.version>20.2</graphql-java.version>
         <jetbrains-annotations>26.0.2-1</jetbrains-annotations>
 
