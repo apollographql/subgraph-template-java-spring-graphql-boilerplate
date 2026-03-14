@@ -1,6 +1,9 @@
 name: PR Checks
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
@@ -47,3 +50,26 @@ jobs:
         run: rover subgraph check ${{ secrets.APOLLO_GRAPH_REF }} --schema src/main/resources/graphql/schema.graphqls --name ${{ env.SUBGRAPH_NAME }}
         env:
           APOLLO_KEY: ${{ secrets.APOLLO_KEY }}
+
+  compose:
+    name: Composition Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - name: Install Rover
+        run: |
+          curl -sSL https://rover.apollo.dev/nix/latest | sh
+          echo "$HOME/.rover/bin" >> $GITHUB_PATH
+      - name: Create supergraph config
+        run: |
+          cat > /tmp/supergraph.yaml << 'HEREDOC'
+          federation_version: =2.10.0
+          subgraphs:
+            template:
+              routing_url: http://localhost:8080/graphql
+              schema:
+                file: ./src/main/resources/graphql/schema.graphqls
+          HEREDOC
+      - name: Compose
+        run: rover supergraph compose --config /tmp/supergraph.yaml
